@@ -12,8 +12,126 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <style>
+      /* Slider */
+
+.slick-slide {
+    margin: 0px 6px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
         body,
         h1,
         h2,
@@ -569,7 +687,44 @@
   </div>
 </div>
 
+<div class="w3-container w3-content w3-margin-bottom">
+  <h2>More Images</h2>
+   <section class="customer-logos slider">
+      <div class="slide" style="height: 200px;"><img style="object-fit: cover; overflow: hidden; height: 100%; width: 100%;" src="images2/(1).jpg"></div>
+      <div class="slide" style="height: 200px;"><img style="object-fit: cover; overflow: hidden; height: 100%; width: 100%;" src="images2/(2).jpg"></div>
+      <div class="slide" style="height: 200px;"><img style="object-fit: cover; overflow: hidden; height: 100%; width: 100%;" src="images2/(3).jpg"></div>
+      <div class="slide" style="height: 200px;"><img style="object-fit: cover; overflow: hidden; height: 100%; width: 100%;" src="images2/(4).jpg"></div>
+      <div class="slide" style="height: 200px;"><img style="object-fit: cover; overflow: hidden; height: 100%; width: 100%;" src="images2/(5).jpg"></div>
+      <div class="slide" style="height: 200px;"><img style="object-fit: cover; overflow: hidden; height: 100%; width: 100%;" src="images2/(6).jpg"></div>
+      <div class="slide" style="height: 200px;"><img style="object-fit: cover; overflow: hidden; height: 100%; width: 100%;" src="images2/(7).jpg"></div>
+     
+   </section>
+</div>
+<script>
+$(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 2
+            }
+        }]
+    });
+});
 
+</script>
 
   <!-- Footer -->
   <div class="w3-container w3-padding-32 w3-text-dark-gray w3-margin-bottom w3-sand"
